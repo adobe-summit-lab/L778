@@ -1,0 +1,13 @@
+{
+    "client_id": "494b6fab8bac492da41e3eea4332e447",
+    "tenant": "lamont",
+    "client_secret": "f580e0d0-91d4-45f0-aa64-3665407363af",
+    "url": "https://ims-na1.adobelogin.com/ims/exchange/jwt/",
+    "payload": {
+        "exp": "",
+        "iss": "2CAB2CAD547352740A4C98C6@AdobeOrg",
+        "sub": "7B7068D05DC2D9B10A495C44@techacct.adobe.com",
+        "https://ims-na1.adobelogin.com/s/ent_marketing_sdk": true,
+        "aud": "https://ims-na1.adobelogin.com/c/494b6fab8bac492da41e3eea4332e447"
+    }
+}
