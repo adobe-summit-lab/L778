@@ -1,4 +1,4 @@
-# Adobe I/O and Launch Lab
+# Adobe Target Lab
 
 ## Table of Contents
 1. [Overview of the Environment](#overview-of-the-environment)
