@@ -1,1 +1,3 @@
-/jwt/private.pem
+.env
+/node_modules/*
+.aws.tmp.creds.json

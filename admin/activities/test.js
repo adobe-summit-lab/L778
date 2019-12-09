@@ -1,1 +1,0 @@
-var activities = require('./activities.js');
