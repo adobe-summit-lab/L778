@@ -1,6 +1,6 @@
 {
     "name": "L778",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "devDependencies": {
         "jest": "^24.8.0",
         "@adobe/wskdebug": "^1.0.10"
