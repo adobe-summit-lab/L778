@@ -2,11 +2,7 @@
 
 # L778
 
-## Readme for overall project, what does the developer need to do to get started here?
-
-## TODO: Populate this file with helpful info
-
-# Adobe I/O Generic App Template
+# Adobe Target "Headless" Lab
 
 A template for building an Adobe I/O App that runs a JAMStack app in Adobe I/O Runtime.
 

@@ -5,4 +5,4 @@
 
 ## TODO: Populate this file with helpful info
 
-The file hello/index.js contains a simple action that you can use as a starting point.
+The file target/index.js contains a simple action that you can use as a starting point.
