@@ -2,7 +2,16 @@ packages:
   __APP_PACKAGE__:
     license: Apache-2.0
     actions:
-      target:
-        function: actions/target/index.js
+      offers:
+        function: actions/offers/index.js
         web: yes
         runtime: 'nodejs:10'
+      createOffer:
+        function: actions/createOffer/index.js
+        web: yes
+        runtime: 'nodejs:10'
+      getToken:
+        function: actions/getToken/index.js
+        web: no
+        runtime: 'nodejs:10'
+      

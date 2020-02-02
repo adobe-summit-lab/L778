@@ -1,50 +1,49 @@
 import React, { Component } from 'react'
+import axios from 'axios';
+
 
 export default class ListOffer extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+          offers:[]
+        }
+      }
+
+    componentDidMount() {
+        axios.get('https://runtime.adobe.io/api/v1/web/lamont2/L778-0.0.2/offers')
+        .then(response => {
+          //return response.data.offers;
+          this.setState({offers: response.data.offers});
+          console.log("state", this.state.offers)
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
     render() {
         return (
             <div className="spectrum-Table" role="grid">
                 <div className="spectrum-Table-head" style={{display: 'flex'}} role="row">
-                    <div className="spectrum-Table-headCell is-sortable is-sorted-desc" style={{flex: 1}} role="columnheader" aria-sort="descending" tabIndex="0">
-                        Column Title
-                        <svg className="spectrum-Icon spectrum-UIIcon-ArrowDownSmall spectrum-Table-sortedIcon" focusable="false" aria-hidden="true">
-                            <use xlinkHref="#spectrum-css-icon-ArrowDownSmall" />
-                        </svg>
+                    <div className="spectrum-Table-headCell" style={{flex: 1}} role="columnheader">
+                        Offer ID
                     </div>
-                    <div className="spectrum-Table-headCell is-sortable" style={{flex: 1}} role="columnheader" aria-sort="none">
-                        Column Title
-                        <svg className="spectrum-Icon spectrum-UIIcon-ArrowDownSmall spectrum-Table-sortedIcon" focusable="false" aria-hidden="true">
-                            <use xlinkHref="#spectrum-css-icon-ArrowDownSmall" />
-                        </svg>
+                    <div className="spectrum-Table-headCell" style={{flex: 1}} role="columnheader">
+                        Offer Name
                     </div>
-                    <div className="spectrum-Table-headCell" style={{flex: 1}} role="columnheader">Column Title</div>
+                    <div className="spectrum-Table-headCell" style={{flex: 1}} role="columnheader">Offer Type</div>
                 </div>
-                <div className="spectrum-Table-body" style={{height: '600px','vertical-align':'top'}} role="rowgroup">
+                <div className="spectrum-Table-body" style={{height: '600px','verticalAlign':'top'}} role="rowgroup">
+
+                {this.state.offers.map((offer, index) => 
+          
                     <div className="spectrum-Table-row" style={{display: 'flex'}} role="row">
-                        <div className="spectrum-Table-cell" style={{flex: 1}} role="gridcell" tabIndex="0">Row Item Alpha</div>
-                        <div className="spectrum-Table-cell" style={{flex: 1}} role="gridcell" tabIndex="0">Row Item Alpha</div>
-                        <div className="spectrum-Table-cell" style={{flex: 1}} role="gridcell" tabIndex="0">Row Item Alpha</div>
+                        <div className="spectrum-Table-cell" style={{flex: 1}} role="gridcell" tabIndex="0">{offer.id}</div>
+                        <div className="spectrum-Table-cell" style={{flex: 1}} role="gridcell" tabIndex="0">{offer.name}</div>
+                        <div className="spectrum-Table-cell" style={{flex: 1}} role="gridcell" tabIndex="0">{offer.type}</div>
                     </div>
-                    <div className="spectrum-Table-row" style={{display: 'flex'}} role="row">
-                        <div className="spectrum-Table-cell" style={{flex: 1}} role="gridcell" tabIndex="0">Row Item Bravo</div>
-                        <div className="spectrum-Table-cell" style={{flex: 1}} role="gridcell" tabIndex="0">Row Item Bravo</div>
-                        <div className="spectrum-Table-cell" style={{flex: 1}} role="gridcell" tabIndex="0">Row Item Bravo</div>
-                    </div>
-                    <div className="spectrum-Table-row" style={{display: 'flex'}} role="row">
-                        <div className="spectrum-Table-cell" style={{flex: 1}} role="gridcell" tabIndex="0">Row Item Charlie</div>
-                        <div className="spectrum-Table-cell" style={{flex: 1}} role="gridcell" tabIndex="0">Row Item Charlie</div>
-                        <div className="spectrum-Table-cell" style={{flex: 1}} role="gridcell" tabIndex="0">Row Item Charlie</div>
-                    </div>
-                    <div className="spectrum-Table-row" style={{display: 'flex'}} role="row">
-                        <div className="spectrum-Table-cell" style={{flex: 1}} role="gridcell" tabIndex="0">Row Item Delta</div>
-                        <div className="spectrum-Table-cell" style={{flex: 1}} role="gridcell" tabIndex="0">Row Item Delta</div>
-                        <div className="spectrum-Table-cell" style={{flex: 1}} role="gridcell" tabIndex="0">Row Item Delta</div>
-                    </div>
-                    <div className="spectrum-Table-row" style={{display: 'flex'}} role="row">
-                        <div className="spectrum-Table-cell" style={{flex: 1}} role="gridcell" tabIndex="0">Row Item Echo</div>
-                        <div className="spectrum-Table-cell" style={{flex: 1}} role="gridcell" tabIndex="0">Row Item Echo</div>
-                        <div className="spectrum-Table-cell" style={{flex: 1}} role="gridcell" tabIndex="0">Row Item Echo</div>
-                    </div>
+                )}
+
                 </div>
             </div>
         )
